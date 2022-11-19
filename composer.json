@@ -5,7 +5,6 @@
             "AnalisticsDataIntegrations\\": "src/"
         }
     },
-    "minimum-stability": "stable",
     "require": {
         "php":">=5.6"
     }
