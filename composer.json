@@ -1,0 +1,12 @@
+{
+    "name": "analistics/analistics-data-integrations",
+    "autoload": {
+        "psr-4": {
+            "AnalisticsDataIntegrations\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php":">=5.6"
+    }
+}
