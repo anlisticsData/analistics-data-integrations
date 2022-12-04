@@ -1,19 +1,19 @@
 <?php return array(
     'root' => array(
-        'name' => 'analistics/analistics-data-integrations',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'name' => 'edi/plug-analistics',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '53435af327c7f1ba4d3566efc1404549d678070a',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        'analistics/analistics-data-integrations' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+        'edi/plug-analistics' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '53435af327c7f1ba4d3566efc1404549d678070a',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
