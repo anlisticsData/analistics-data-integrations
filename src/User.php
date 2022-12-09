@@ -5,7 +5,8 @@ namespace PlugAnalistics;
 
 
 
-class User{
+class User implements DomainEntityCastInterface{
+    public $api;
     public $uuid;
     public $name;
     public $login;
@@ -16,9 +17,14 @@ class User{
     public $deleted_at;
     public $groups_uuid;
     public $type_of_accounts_uuid;
+    public $access;
+    public $resources;
+    public $dws;
+    public $extractos;
     public $status;
     public $avatar;
-
+    
+ 
 
     function __construct($UserArray)
     {

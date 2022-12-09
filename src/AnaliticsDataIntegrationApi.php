@@ -5,15 +5,17 @@ use Exception;
 
 class AnaliticsDataIntegrationApi{
     private $httpService = null;
-    private $url_api = "http://localhost/smdataanlystic/public";
+    private $url_api = null;
     private $token = null;
-    private $tokenLoginIn = '123456789';
+    private $tokenLoginIn ='';
     private $user = null;
     private $response = null ;
 
 
-    function __construct()
+    function __construct($tokenLoginIn,$url_api)
     {
+        $this->tokenLoginIn = $tokenLoginIn;
+        $this->url_api = $url_api;
         $this->httpService  = new AnaliticsDataIntegration(new CurlAdapter());
         return $this;
     }
@@ -36,7 +38,46 @@ class AnaliticsDataIntegrationApi{
     public function activeUser(){
         try{
             $paserJsonInObject = json_decode($this->user,true);
-            return new User($paserJsonInObject['data']['user']);
+            $api = new Api($paserJsonInObject);
+            $api->uuid =  $paserJsonInObject['data']['uuid'];
+            $api->jwt =  $paserJsonInObject['data']['jwt'];
+
+
+            $userCast = new User($paserJsonInObject['data']['user']);
+            $userCast->api = $api;
+
+            $userCast->access = new Access($paserJsonInObject['data']['group_acess']);
+
+            if(!is_null($paserJsonInObject['data']['resources'])){
+                foreach($paserJsonInObject['data']['resources'] as $key => $resource){
+                    $userCast->resources[] = new Resources($resource);
+                }
+            }
+
+            if(!is_null($paserJsonInObject['data']['dws'])){
+                foreach($paserJsonInObject['data']['dws'] as $key => $dw){
+                    $dwuser =  new Dw($dw);
+                    $dwuser->companyInformation = new Company($dw['company']);
+                    $userCast->dws[] =$dwuser;
+                    
+                }
+            }
+
+
+            if(!is_null($paserJsonInObject['data']['extractors'])){
+                foreach($paserJsonInObject['data']['extractors'] as $key => $extractor){
+                    $extractorUser =  new Extractors($extractor[0]);
+                    $userCast->extractos[] =$extractorUser;
+                    
+                }
+            }
+
+           
+           
+
+
+
+            return $userCast;
         }catch(Exception $e){
             throw new Exception('Not Cast Json in User.('.$e->getMessage().')',500);
         }
