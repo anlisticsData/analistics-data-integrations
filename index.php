@@ -6,13 +6,15 @@ error_reporting(E_ALL);
 
 
 use PlugAnalistics\StringApp;
+use PlugAnalistics\EndPointsServices;
 use PlugAnalistics\AnaliticsDataIntegrationApi;
 
  
  
 
 require_once("vendor/autoload.php");
-$Anl  =   new AnaliticsDataIntegrationApi("123456789","http://localhost/smdataanlystic/public");
+
+$Anl  =   new AnaliticsDataIntegrationApi(new EndPointsServices(),"123456789","http://localhost/smdataanlystic/public");
 
 
 
@@ -32,6 +34,6 @@ $Anl->loginIn("ed@a.c","1");
 
 $out = $Anl->activeUser();
 
-print_r([$out]);
+print_r([$Anl->CustomersServices()]);
 
 ?>
