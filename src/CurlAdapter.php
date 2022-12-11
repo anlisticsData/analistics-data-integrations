@@ -9,14 +9,22 @@ class CurlAdapter implements HttpInterface{
     function setHeader($type,$valor){
         $this->header[]=sprintf("%s:%s",$type,$valor);
     }
+    
+
+    
     function get($url,$token){
         $response = null;
         try{
+
+            $this->header = [];
+            $this->setHeader('Content-Type','application/json');
+            $this->setHeader('jwt',$token);
             $curl = curl_init();
             curl_setopt($curl,CURLOPT_URL,$url);
             curl_setopt($curl,CURLOPT_CUSTOMREQUEST,"GET");
             curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION,true); 
+            curl_setopt($curl, CURLOPT_HTTPHEADER,$this->header);   
             $response=curl_exec($curl);
             curl_close($curl);
         }catch(Exception $e){

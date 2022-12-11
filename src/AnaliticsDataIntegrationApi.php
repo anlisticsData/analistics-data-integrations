@@ -92,9 +92,10 @@ class AnaliticsDataIntegrationApi{
     }
 
     public function CustomersServices(){
-        $this->customersService = new CustomersService($this);
+        $this->customersService = new CustomersService($this->url_api,$this->user,$this->serviceApi,$this->httpService);
         return $this->customersService;
     }
 }
 
 ?>
+ 

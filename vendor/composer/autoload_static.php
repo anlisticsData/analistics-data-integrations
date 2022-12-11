@@ -22,6 +22,22 @@ class ComposerStaticInitab2ca6aca15be98576ccc7539f91b4ee
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'PlugAnalistics\\Access' => __DIR__ . '/../..' . '/src/Access.php',
+        'PlugAnalistics\\AnaliticsDataIntegration' => __DIR__ . '/../..' . '/src/AnaliticsDataIntegration.php',
+        'PlugAnalistics\\AnaliticsDataIntegrationApi' => __DIR__ . '/../..' . '/src/AnaliticsDataIntegrationApi.php',
+        'PlugAnalistics\\Api' => __DIR__ . '/../..' . '/src/Api.php',
+        'PlugAnalistics\\Company' => __DIR__ . '/../..' . '/src/Company.php',
+        'PlugAnalistics\\CurlAdapter' => __DIR__ . '/../..' . '/src/CurlAdapter.php',
+        'PlugAnalistics\\CustomersService' => __DIR__ . '/../..' . '/src/CustomersService.php',
+        'PlugAnalistics\\DomainEntityCastInterface' => __DIR__ . '/../..' . '/src/DomainEntityCastInterface.php',
+        'PlugAnalistics\\Dw' => __DIR__ . '/../..' . '/src/Dw.php',
+        'PlugAnalistics\\EndPointsServices' => __DIR__ . '/../..' . '/src/EndPointsServices.php',
+        'PlugAnalistics\\Extractors' => __DIR__ . '/../..' . '/src/Extractors.php',
+        'PlugAnalistics\\HttpInterface' => __DIR__ . '/../..' . '/src/HttpInterface.php',
+        'PlugAnalistics\\Resources' => __DIR__ . '/../..' . '/src/Resources.php',
+        'PlugAnalistics\\StringApp' => __DIR__ . '/../..' . '/src/StringApp.php',
+        'PlugAnalistics\\User' => __DIR__ . '/../..' . '/src/User.php',
+        'PlugAnalistics\\Uteis' => __DIR__ . '/../..' . '/src/Uteis.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -5,7 +5,7 @@ namespace PlugAnalistics;
 class EndPointsServices{
 
     public $oauth = "oauth";
-    public $customersByRgCpjCnpj = "customersByRgCpjCnpj";
+    public $customersByRgCpjCnpj = "Customers/customersByRgCpjCnpj";
 
 
 }

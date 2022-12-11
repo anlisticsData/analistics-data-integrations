@@ -21,6 +21,11 @@ class AnaliticsDataIntegration{
     public function  apiServices($url,$token=null){
         return $this->httpServices->get($url,$token);
     }
+
+    public function  get($url,$token=null){
+        return $this->httpServices->get($url,$token);
+    }
+
 }
 
 
