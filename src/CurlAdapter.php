@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 use Exception;
 
 class CurlAdapter implements HttpInterface{

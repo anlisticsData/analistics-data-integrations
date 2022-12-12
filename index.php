@@ -27,7 +27,6 @@ try{
 
     $Anl->loginIn("extractorAdminUser@analistics.com","1");
 
-    
     $out = $Anl->activeUser();
     
 

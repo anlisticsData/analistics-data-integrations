@@ -1,7 +1,6 @@
 <?php
 namespace PlugAnalistics;
 
-
 class Uteis{
 
     public static function isEmpty($value){

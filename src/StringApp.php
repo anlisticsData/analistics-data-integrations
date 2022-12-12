@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class StringApp{
  
     public static function getString($stringId){

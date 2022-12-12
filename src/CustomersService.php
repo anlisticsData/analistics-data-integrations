@@ -2,7 +2,6 @@
 namespace PlugAnalistics;
 use Exception;
 
-
 class CustomersService{
 	private $context =  null;
 	private $user;

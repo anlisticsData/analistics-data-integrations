@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Dw implements DomainEntityCastInterface{
 	 
     public $uuid;
