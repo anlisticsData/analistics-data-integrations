@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Access implements DomainEntityCastInterface{
     public $uuid;  
     public $nome;  

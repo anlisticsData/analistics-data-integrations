@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Company implements DomainEntityCastInterface{
     public $uuid;
     public $name_fantasia;
@@ -8,8 +7,7 @@ class Company implements DomainEntityCastInterface{
     public $cnpj_cpjf;
     public $matriz;
     public $arms_system;
-    
-    
+        
     function __construct($companyArray)
     {
         $class_vars = get_class_vars(get_class($this));

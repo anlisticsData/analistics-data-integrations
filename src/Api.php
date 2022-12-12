@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Api implements DomainEntityCastInterface{
     public $status;
     public $error;

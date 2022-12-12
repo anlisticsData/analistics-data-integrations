@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Extractors implements DomainEntityCastInterface{
    public $uuid;
    public $status;

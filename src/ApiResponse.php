@@ -11,7 +11,6 @@ class ApiResponse implements DomainEntityCastInterface{
 
 
 
-
     function __construct($apiArray)
     {
       

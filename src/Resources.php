@@ -1,6 +1,5 @@
 <?php
 namespace PlugAnalistics;
-
 class Resources implements DomainEntityCastInterface{
 	    public $uuid;
         public $nome;
