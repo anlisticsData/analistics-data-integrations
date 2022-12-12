@@ -16,7 +16,7 @@ require_once("vendor/autoload.php");
 
 try{
 
-    $Anl  =   new AnaliticsDataIntegrationApi(new EndPointsServices(),"123456789","http://192.168.25.115/smdataanlystic/public");
+    $Anl  =   new AnaliticsDataIntegrationApi(new EndPointsServices(),"123456789","http://192.168.15.9/smdataanlystic/public");
     echo "<pre>";
     echo StringApp::getString('TESTE');
     //$Anl->loginIn("ed@a.c","1");
@@ -37,7 +37,9 @@ try{
     
 
 
-    $Anl->CustomersServices()->customersByRgCpjCnpj($out->api->jwt,"32186670895",'CPF');
+   $r =  $Anl->CustomersServices()->customersByRgCpjCnpj($out->api->jwt,"321866708975",'CPF');
+
+   var_dump($r);
 
 }catch(Exception $e){
     print_r($e->getMessage());

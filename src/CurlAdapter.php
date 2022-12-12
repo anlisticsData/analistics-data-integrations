@@ -5,11 +5,31 @@ use Exception;
 
 class CurlAdapter implements HttpInterface{
     private $header =  [];
+    private $headerResponse = null;
+    
 
     function setHeader($type,$valor){
         $this->header[]=sprintf("%s:%s",$type,$valor);
     }
     
+
+    private function setHeaderResponse($headerResponse){
+        $this->headerResponse = [];
+        foreach($headerResponse as $key => $header){
+            $this->headerResponse[$key]= $header;
+        }
+    }
+    public function getHeaderResponse($type){
+        foreach($this->headerResponse as $key => $header){
+            if($type==$key) return $header;
+            
+        }
+        return null;
+    }
+
+    public function getHeaderResponseAll(){
+        return $this->headerResponse;
+    }
 
     
     function get($url,$token){
@@ -26,7 +46,10 @@ class CurlAdapter implements HttpInterface{
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION,true); 
             curl_setopt($curl, CURLOPT_HTTPHEADER,$this->header);   
             $response=curl_exec($curl);
+            $this->setHeaderResponse(curl_getinfo($curl));
             curl_close($curl);
+ 
+
         }catch(Exception $e){
             throw new  Exception("Error Http (get) ",500);
         }
@@ -45,7 +68,8 @@ class CurlAdapter implements HttpInterface{
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);   
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION,true);                                                 
             curl_setopt($curl, CURLOPT_HTTPHEADER,$this->header);   
-            $response = curl_exec($curl);                                                                       
+            $response = curl_exec($curl);         
+            $this->setHeaderResponse(curl_getinfo($curl));
             curl_close($curl);                                     
 
         }catch(Exception $e){

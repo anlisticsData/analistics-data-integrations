@@ -28,19 +28,15 @@ class CustomersService{
     		throw new Exception('Rg ou Cnpj,invalido ou Tipo Invalido [ '.implode(",",$this->types).' ].',400);
     	}
 		try{
-			 
 			$url = sprintf("%s/%s?uuid=%s&type=%s",$this->api,$this->serviceApi->customersByRgCpjCnpj,$rgCnpj,$type);
-			$response = $this->httpService->get($url,$token);
-
-		var_dump(json_decode($response,true));
-
-	 
-			
-		
-		  
-
+			$response =new ApiResponse($this->httpService->get($url,$token));
+			if($response->status == null){
+				$response->status = $this->httpService->getHeaderResponse('http_code');
+				return $response;
+			}
+			return $response;
 		}catch(Exception $e){}
-
+		return null;
     }
 
 }

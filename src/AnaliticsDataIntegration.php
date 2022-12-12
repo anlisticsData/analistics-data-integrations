@@ -26,6 +26,15 @@ class AnaliticsDataIntegration{
         return $this->httpServices->get($url,$token);
     }
 
+    public function getHeaderResponse($type){
+        $headers = $this->httpServices->getHeaderResponseAll();
+        foreach($headers as $key => $header){
+            if($type==$key) return $header;
+        }
+        return null;
+    }
+
+
 }
 
 
