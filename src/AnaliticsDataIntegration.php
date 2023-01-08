@@ -35,6 +35,13 @@ class AnaliticsDataIntegration{
     }
 
 
+
+    function postUrlencoded2($url,$data,$token){
+        return $this->httpServices->postUrlencoded2($url,$data,$token);
+    }   
+
+
+
 }
 
 

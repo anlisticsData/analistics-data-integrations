@@ -6,7 +6,7 @@ class EndPointsServices{
 
     public $oauth = "oauth";
     public $customersByRgCpjCnpj = "Customers/customersByRgCpjCnpj";
-
+    public $customersAddCustomers = "Customers/addCustomers";
 
 }
 
